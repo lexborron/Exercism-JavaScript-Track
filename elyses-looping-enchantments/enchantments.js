@@ -29,17 +29,13 @@ export function determineOddEvenCards(stack, type) {
   let evenCount = 0;
   let oddCount = 0;
 
-  for (let i = 0; i < stack.length; i++) {
-    if (stack[i] % 2 === 0) {
+  for (const card of stack) {
+    if (card % 2 === 0) {
       evenCount++;
     } else {
       oddCount++;
     }
   }
 
-  if (type) {
-    return evenCount;
-  } else {
-    return oddCount;
-  }
+  return type ? evenCount : oddCount;
 }
